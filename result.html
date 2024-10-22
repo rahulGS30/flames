@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Result</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FLAMES Result</h1>
+        <div id="result"></div>
+        <button onclick="tryAgain()">Try Again</button>
+    </div>
+    <script>
+        // Retrieve the result from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            const result = localStorage.getItem("flamesResult");
+            document.getElementById("result").innerText = `Result: ${result}`;
+        });
+
+        function tryAgain() {
+            // Clear the localStorage and redirect to the main page
+            localStorage.removeItem("flamesResult");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
